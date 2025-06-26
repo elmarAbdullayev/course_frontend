@@ -1,12 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import Home from "./components/home/Home.tsx"
+import Login from "./components/Login.tsx";
 
 function App() {
+
   return (
-    <div className="App">
-     <h1>Hello World</h1>
-    </div>
+
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+
   );
 }
+
 
 export default App;
