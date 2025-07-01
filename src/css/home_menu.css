@@ -26,22 +26,22 @@
   line-height: 1;
 }
 
-.parentUl li:hover {
-  background-color: #dee8f0;
-  cursor: pointer;
 
-}
 
 @media (max-width: 1000px) {
 
 .menu .noneBox{
   display: none;
 }
-
-.parentUl li {
-  width: 50% !important;
-
 }
 
-}
+
+   /* CSS FÜR HAMBURGER */
+
+   .subContainerHambuger div ul li {
+ cursor: pointer;
+ display: flex;
+  align-items: center;
+  gap: 3rem;  
+   }
 
