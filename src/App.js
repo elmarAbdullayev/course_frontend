@@ -2,6 +2,8 @@ import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import Home from "./components/home/Home.tsx"
 import Login from "./components/Login.tsx";
 import LayoutWithMenu from "./components/LayoutWithMenu.tsx";
+import Register from "./components/Register.tsx";
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
         <Route element={<LayoutWithMenu />}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/register" element={<Register />} />
         </Route>
 
         {/* Seiten OHNE Menü */}

@@ -1,0 +1,57 @@
+.iconsLogin{
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.rightSideLogin img {
+    width: 27.4rem;
+    height: 45rem;
+}
+
+.einlogButonLehrer {
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    border: black 1px solid;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+.einlogButonLehrer:hover {
+    background-color: black;
+    color: white;
+}
+
+.einlogButton {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.einlogButton:hover {
+    background-color: white !important;
+    color: black;
+}
+
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.einlogButton {
+  animation: pulse 1s infinite;
+}
+
+
+@media (max-width:1000px){
+    .rightSideLogin img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .einlogButton{
+        width: 38% !important;
+    }
+    .einlogButonLehrer{
+        width: 37% !important;
+    }
+}

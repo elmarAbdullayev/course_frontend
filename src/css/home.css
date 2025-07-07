@@ -1,0 +1,37 @@
+.HomeContainer{
+    background-color: rgb(221, 252, 175);
+    padding: 15%;
+}
+
+.HomeContainer img{
+    width: 25rem;
+    height: 25rem;
+   position: absolute;
+   right: 0;
+   bottom: 13.3rem;
+  
+}
+
+@media (max-width:1000px) {
+
+    .HomeContainer{
+    background-color: rgb(221, 252, 175);
+    padding: 40%;
+}
+    .HomeContainer img{
+    width: 25rem;
+    height: 25rem;
+   position: absolute;
+   right: 0;
+   bottom: 22.6rem;
+}
+.HomeContainer div h1,
+.HomeContainer div h5,
+.HomeContainer div i{
+    display:none;
+}
+}
+
+.smallPictures img{
+    width: 20rem;
+}

@@ -1,0 +1,38 @@
+.foto{
+   width: 20rem;
+}
+
+.containerRegister{
+    background-color: rgb(217, 237, 255);
+  
+}
+
+.persolicheDatenContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+}
+
+.persolicheDatenContainer input{
+    width: 45%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.pensonlicheDatenEmailContainer{
+    width: 75%;
+}
+
+.emailPasswortContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.emailPasswortContainer input{
+    width: 45%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+}

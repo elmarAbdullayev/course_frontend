@@ -6,18 +6,38 @@ import { PiStudentDuotone } from "react-icons/pi";
 import { FaPencilAlt } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
 import { SlBasket } from "react-icons/sl";
-import { GrLogout } from "react-icons/gr";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiTwotoneLike } from "react-icons/ai";
+import Hamburger from './Hamburger.tsx';
+import { RiLoginBoxFill } from "react-icons/ri"; 
+import { useNavigate } from "react-router-dom";
 
 const Menu: React.FC = () => {
-  const [isOpen, setIsOpen] = useState<boolean>();
+  const [showMenu, setShowMenu] = useState<boolean>(false);
+
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/");
+     window.location.reload()
+  };
 
   return (
     <div>
-      <nav className=" container ">
+      <nav className=" container">
+
+        {showMenu && (
+       <div className="menu-overlay">
+          <Hamburger setShow={setShowMenu}  showMenu={showMenu}/>
+        </div>
+        )}
+
+     
+            
+
         <ul className="menu d-flex justify-content-between list-unstyled p-3 ">
-          <li onClick={() => window.location.reload()}>
+          <li onClick={() => handleClick()}>
             <img
               src="https://wallpapercave.com/wp/wp11095556.jpg"
               alt=""
@@ -36,11 +56,11 @@ const Menu: React.FC = () => {
           </li>
           <li className="noneBox">
             <PiStudentDuotone className="fs-4" />
-            <Link to="/login">telc Prüfung</Link>
+            <Link to="/">telc Prüfung</Link>
           </li>
           <li className="noneBox">
             <AiTwotoneLike className="fs-4" />
-            <Link to="/register">Vorteile</Link>
+            <Link to="/">Vorteile</Link>
           </li>
           <li className="noneBox">
             <FaPencilAlt className="fs-4" />
@@ -48,15 +68,15 @@ const Menu: React.FC = () => {
           </li>
           <li className="noneBox">
             <CiLocationOn className="fs-4" />
-            <Link to="/login">Location</Link>
+            <Link to="/">Location</Link>
           </li>
           <li>
             <SlBasket className="fs-4" />
           </li>
-          <li>
-            <GrLogout className="fs-4" />
+          <li >
+          <Link to={"/login"}><RiLoginBoxFill className="fs-4"/></Link> 
           </li>
-          <li onClick={() => setIsOpen(!isOpen)}>
+          <li onClick={() => setShowMenu(!showMenu)}>
             <RxHamburgerMenu className="fs-4" />
           </li>
         </ul>
