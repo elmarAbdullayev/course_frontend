@@ -15,6 +15,7 @@ import axios from "axios";
       };
 
 export const CreateUser = async (data: FetchData) =>  {
+  
 
     return axios.post("http://localhost:8080/api/register", data)
         .then(response => {

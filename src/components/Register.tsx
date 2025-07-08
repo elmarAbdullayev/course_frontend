@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../css/register.css";
-import { CreateUser,FetchData } from "../api/register.ts"; 
+import { CreateUser } from "../api/register.ts"; 
 
 const Register: React.FC = () => {
 
@@ -83,6 +83,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     }
 
     try{
+                console.log(data)
     await CreateUser(fetching)
     }catch(error) {
       console.error("Fehler beim Erstellen des Benutzers:", error);
