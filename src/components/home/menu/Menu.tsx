@@ -11,10 +11,19 @@ import { AiTwotoneLike } from "react-icons/ai";
 import Hamburger from './Hamburger.tsx';
 import { RiLoginBoxFill } from "react-icons/ri"; 
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RiLogoutBoxLine } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import {logout,login} from "../../../redux/slice.ts"
+import { selectToken } from "../../../redux/slice.ts";
 
 const Menu: React.FC = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
+  const token = useSelector(selectToken)
+  const dispatch = useDispatch()
+
+  console.log(token)
 
   const navigate = useNavigate();
 
@@ -22,6 +31,7 @@ const Menu: React.FC = () => {
     navigate("/");
      window.location.reload()
   };
+
 
   return (
     <div>
@@ -50,7 +60,7 @@ const Menu: React.FC = () => {
           </li>
           <li className="noneBox">
             <TbBooks className="fs-4" />
-            <Link to="/" className="text-decoration-none">
+            <Link to="/" className="text-decoration-none"  onClick={()=>setShowMenu(!showMenu)}>
               Deutschkurse
             </Link>
           </li>
@@ -73,9 +83,17 @@ const Menu: React.FC = () => {
           <li>
             <SlBasket className="fs-4" />
           </li>
-          <li >
+
+          {token ? (
+              <li >
+          <Link to={"/login"} onClick={()=>dispatch(logout())}><RiLogoutBoxLine  className="fs-4"/></Link> 
+          </li>
+          ): <li >
           <Link to={"/login"}><RiLoginBoxFill className="fs-4"/></Link> 
           </li>
+           }
+    
+
           <li onClick={() => setShowMenu(!showMenu)}>
             <RxHamburgerMenu className="fs-4" />
           </li>
