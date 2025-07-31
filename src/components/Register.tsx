@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "../css/register.css";
-import { CreateUser } from "../api/register.ts"; 
+import { CreateUser,FetchData } from "../api/register.ts"; 
+import { useNavigate } from "react-router-dom";
 
 const Register: React.FC = () => {
+
+  const navigate = useNavigate();
 
       type FormData = {
         nachName: string;
@@ -70,20 +73,20 @@ const handleSubmit = async (e: React.FormEvent) => {
     }
 
     const fetching = {
-    nachName: data.nachName,
-    vorName: data.vorName,
+    name: data.vorName,
+    surname: data.nachName,
     anrede: data.anrede,
-    geburtstag: data.geburtstag,
-    straßeAndHausnummer: data.straßeAndHausnummer,
+    date_of_birth: data.geburtstag,
+    street_and_hausnumber: data.straßeAndHausnummer,
     plz: data.plz,
-    stadt: data.stadt,
-    land: data.land,
+    city: data.stadt,
     email: data.email,
     password: data.password,
+    role:"user"
+
     }
 
     try{
-                console.log(data)
     await CreateUser(fetching)
     }catch(error) {
       console.error("Fehler beim Erstellen des Benutzers:", error);

@@ -3,6 +3,7 @@ import Home from "./components/home/Home.tsx"
 import Login from "./components/Login.tsx";
 import LayoutWithMenu from "./components/LayoutWithMenu.tsx";
 import Register from "./components/Register.tsx";
+import AdminPanel from "./components/AdminPanel.tsx";
 
 
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/admin" element={<AdminPanel/>} />
         </Route>
 
         {/* Seiten OHNE Menü */}

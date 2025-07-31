@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "../../css/home.css";
+import Menu from './menu/Menu.tsx';
 
 const Home: React.FC = () => {
 
@@ -14,6 +15,8 @@ const Home: React.FC = () => {
         <h1>Deutsch lernen</h1>
         <h5>mit Geld-zurück-Garantie</h5>
         <hr />
+
+
        <Link to={"/"}><i>Deutschkurs buchen</i></Link> 
         </div>
         <img src="https://pngteam.com/images/happy-person-png-1261x883_e6a99ff9_transparent_202ff8.png.png" alt="" />

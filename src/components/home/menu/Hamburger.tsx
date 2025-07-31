@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IoClose } from "react-icons/io5";
 import { RiLoginBoxFill } from "react-icons/ri";
 import { TbBooks } from "react-icons/tb";
@@ -8,7 +8,12 @@ import { CiLocationOn } from "react-icons/ci";
 import { AiTwotoneLike } from "react-icons/ai";
 import { FiChevronRight } from "react-icons/fi";
 import "../../../css/home_menu.css";
-
+import { useDispatch } from "react-redux";
+import {logout} from "../../../redux/slice.ts"
+import { selectToken } from "../../../redux/slice.ts";
+import { useSelector } from "react-redux";
+import { RiLogoutBoxLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 type HamburgerProps = {
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,6 +22,9 @@ type HamburgerProps = {
 const Hamburger: React.FC<HamburgerProps> = ({setShow,showMenu}) => {
   const [check, setCheck] = React.useState<string>("");
   const [checkRight, setCheckRight] = React.useState<string>("");
+
+    const token = useSelector(selectToken)
+  const dispatch = useDispatch()
 
   const handleClick = (e: React.MouseEvent<HTMLLIElement>, s: string) => {
     setCheck(s);
@@ -29,14 +37,30 @@ const Hamburger: React.FC<HamburgerProps> = ({setShow,showMenu}) => {
     setCheckRight(s);
   };
 
+
+
   return (
 
     <div className="container fs-2">
 
       <div className="d-flex justify-content-between exit loginCloseIcons">
         <div className="d-flex align-items-center gap-4">
-         <RiLoginBoxFill />
-          <h3>Einloggen</h3>
+
+                  {token ? (
+       <div className="d-flex">
+                  <Link to={"/login"} onClick={()=>dispatch(logout())}><RiLogoutBoxLine  className="fs-4"/></Link> 
+          <h3>ausloggen</h3>
+       </div>
+
+          ): 
+          <div  className="d-flex align-items-center justify-content-center">
+         <Link to={"/login"}><RiLoginBoxFill className="fs-4"/></Link> 
+           <h3>einloggen</h3>
+          </div>
+ 
+           }
+        
+
         </div>
         <div>
         <IoClose onClick={()=>setShow(!showMenu)}/>
