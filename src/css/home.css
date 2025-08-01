@@ -35,3 +35,21 @@
 .smallPictures img{
     width: 20rem;
 }
+
+
+/* für belibterkurse */
+
+.parentDiv img {
+    width: 25rem;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.intensivkursfinder{
+    cursor: pointer;
+}
+
+.semiintensivkursfinder{
+    cursor: pointer;
+}

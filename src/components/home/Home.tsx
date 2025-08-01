@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import "../../css/home.css";
 import Menu from './menu/Menu.tsx';
+import BelibterKurse from './BelibterKurse.tsx';
 
 const Home: React.FC = () => {
 
@@ -30,6 +31,8 @@ const Home: React.FC = () => {
           <img src="https://www.deutschakademie.de/wp-content/uploads/2024/12/ProvenExpert.png" alt="" />
           <img src="https://www.deutschakademie.de/wp-content/uploads/2024/12/20-Jahre-Erfahrung-1.png" alt="" />
       </div>
+
+        <BelibterKurse />
    </div>
 
 
