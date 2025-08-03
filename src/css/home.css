@@ -53,3 +53,19 @@
 .semiintensivkursfinder{
     cursor: pointer;
 }
+
+
+/* Standorte  */
+
+.standOrtParentDiv img {
+  width: 12rem;
+  cursor: pointer;
+}
+
+.standOrtParentDiv img{
+    transition: transform 0.3s;
+}
+
+.standOrtParentDiv img:hover {
+  transform: scale(1.05);
+}

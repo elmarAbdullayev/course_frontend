@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import "../../css/home.css";
 import Menu from './menu/Menu.tsx';
 import BelibterKurse from './BelibterKurse.tsx';
+import Standorte from './Standorte.tsx';
 
 const Home: React.FC = () => {
 
@@ -33,6 +34,7 @@ const Home: React.FC = () => {
       </div>
 
         <BelibterKurse />
+        <Standorte/>
    </div>
 
 
